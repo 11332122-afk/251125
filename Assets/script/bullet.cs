@@ -25,6 +25,10 @@ public class bullet : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.AddScore(10);
+            }
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
